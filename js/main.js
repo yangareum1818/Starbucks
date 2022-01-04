@@ -1,20 +1,3 @@
-const searchEl = document.querySelector('.search');
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click', function() {
-  searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function() {
-  searchEl.classList.add('focused');
-  searchInputEl.setAttribute('placeholder', '통합검색');
-});
-
-searchInputEl.addEventListener('blur', function() {
-  searchEl.classList.remove('focused');
-  searchInputEl.setAttribute('placeholder', '');
-});
-
 // badges scroll 
 const badgeEl = document.querySelector('header .badges');
 
@@ -156,7 +139,3 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller());   //  ScrollMagic에 추가한 옵션에서 내부적으로 Controller해서 동작하도록 만들어 줌
 });
-
-// FOOTER TODAY (날짜 계산)
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear();    // 2021
