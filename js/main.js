@@ -1,5 +1,6 @@
 // badges scroll 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 window.addEventListener('scroll', _.throttle(function () {
   console.log(window.scrollY > 500);
@@ -11,7 +12,7 @@ window.addEventListener('scroll', _.throttle(function () {
       display: 'none'
     });
     // ScrollTop Btn 숨기기 ! 
-    gsap.to('#to-top', .3, {
+    gsap.to(toTopEl, .3, {
       x: 0
     });
   } else {
@@ -22,7 +23,7 @@ window.addEventListener('scroll', _.throttle(function () {
     });
 
     // ScrollTop Btn 숨기기 ! 
-    gsap.to('#to-top', .3, {
+    gsap.to(toTopEl, .3, {
       x: 120
     });
   }
@@ -30,8 +31,7 @@ window.addEventListener('scroll', _.throttle(function () {
 // _.throttle(함수, 시간)
 
 // toTop btn 클릭시 상단으로 이동
-const toTopEl = document.querySelector('#to-top');
-toTopEl.addEventListener('click', function () {
+toTopEl.addEventListener('click', function() {
   gsap.to(window, .7, {
     scrollTo: 0
   });
